@@ -13,5 +13,5 @@ Later, used that logic and created a Spring Boot project.
     - Check if the project is running on http://localhost:8080/
     - it works only on firefox.
     
-![Screenshot]{test.jpg "image:"}
+![Screenshot](Screenshot.jpg "image:")
 
