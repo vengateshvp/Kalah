@@ -75,17 +75,22 @@ public class KalahService {
         // Check if the last stone was filled in an empty pit.
         Player tmpPlayer = getPlayerByPitNumber(pitNumber);
         if (null != tmpPlayer && kalaMap.get(pitNumber) == 1) {
-            Long oppositeIndex = 12 - pitNumber;
-            Integer tmpStones = 1 + kalaMap.get(oppositeIndex);
-            kalaMap.put(pitNumber, 0);
-            kalaMap.put(oppositeIndex, 0);
+            
 
             if (tmpPlayer.equals(player1) && currentPlayer.equals(tmpPlayer)) {
                 // Take all stones from P2's pit & current pit
-                kalaMap.put(6L, tmpStones + kalaMap.get(6));
+            	Long oppositeIndex = 12 - pitNumber;
+                Integer tmpStones = 1 + kalaMap.get(oppositeIndex);
+                kalaMap.put(pitNumber, 0);
+                kalaMap.put(oppositeIndex, 0);
+                kalaMap.put(6L, tmpStones + kalaMap.get(6L));
             } else if (tmpPlayer.equals(player2) && currentPlayer.equals(tmpPlayer)) {
                 // Take all stones from P1's pit & current pit
-                kalaMap.put(13L, tmpStones + kalaMap.get(13));
+            	Long oppositeIndex = 12 - pitNumber;
+                Integer tmpStones = 1 + kalaMap.get(oppositeIndex);
+                kalaMap.put(pitNumber, 0);
+                kalaMap.put(oppositeIndex, 0);
+                kalaMap.put(13L, tmpStones + kalaMap.get(13L));
             }
         }
 
@@ -142,7 +147,7 @@ public class KalahService {
     
     public boolean isGameOver() {
         boolean status = false;
-        if (kalaMap.getPlayer1TotalStones() == 0 || kalaMap.getPlayer2TotalStones() == 0) {
+        if (kalaMap.getPlayer1TotalStones().intValue() == 0 || kalaMap.getPlayer2TotalStones().intValue() == 0) {
             status = true;
             pushPitValuesToKalahs();
             

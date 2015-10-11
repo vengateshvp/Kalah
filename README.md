@@ -12,6 +12,11 @@ Later, used that logic and created a Spring Boot project.
     - run maven spring-boot:run
     - Check if the project is running on http://localhost:8080/
     - it works only on firefox.
+    -	Validations are not handled.
+    - Rename main2 method to main in MainLogic from standalone package, if you want to use this appl. as standalone.
+    - Pick up the right player based on the indicator as shown below.
     
-![Screenshot](Screenshot.jpg "image:")
+
+###Screen Shot
+![Screenshot](Screenshot.jpg)
 

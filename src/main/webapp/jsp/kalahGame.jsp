@@ -14,15 +14,14 @@
         Welcome to Kalah game
     </h1>
 
-    <c:choose>
-        <c:when test="${not empty gameOver}">
-            ${gameOver}
-        </c:when>
+            <%-- Game Status : ${gameOver} </br> </br> --%>
 
-        <c:otherwise>
 
             Next player: ${currentPlayer.name}
 
+			<div class="p2">
+				Player 2
+			</div>
             <div class="kalah-board">
                 <div class="player2-kalah">
                     ${kalahBoard[13]}
@@ -49,7 +48,8 @@
                     ${kalahBoard[6]}
                 </div>
             </div>
-        </c:otherwise>
-    </c:choose>
+            <div class="p1">
+				Player 1
+			</div>
 
 </html>

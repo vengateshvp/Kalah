@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
 @Controller
-@SessionAttributes({"kalaMap", "currentPlayer"})
+@SessionAttributes({"kalaMap", "currentPlayer" , "gameOver"})
 public class KalahController {
 
     @Autowired
@@ -24,6 +24,7 @@ public class KalahController {
     @RequestMapping("/")
     public String loadKalahBoard(@RequestParam(value = "pitNumber", required = false) Long pitNumber, ModelMap map) {
 
+    	map.addAttribute("gameOver", "In Progress..." );
         if (null != pitNumber) {
             // Make moves in the board only when there is a valid Pit Number received int he request.
             kalahService.play(pitNumber);
@@ -37,7 +38,7 @@ public class KalahController {
             	else if (kalahMap.get(6L).intValue() < kalahMap.get(13L).intValue() ){
             		gameStatus = "Player2 is Winner...";
             	}
-                map.addAttribute("gameOver", "The Game is over !!! " +gameStatus);
+                map.addAttribute("gameOver", "Game Over !!! "+ gameStatus );
             }
         }
 

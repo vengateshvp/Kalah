@@ -109,7 +109,7 @@ public class MainLogic {
      * If you want to run the project, make sure you rename this back to main2 or any other name other than main.
      * @param args
      */
-    public static void main2(String[] args) {
+    public static void main2(String[] args) { 
 
         MainLogic board = new MainLogic();
 
